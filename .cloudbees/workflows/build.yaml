@@ -1,0 +1,13 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: build
+on:
+  push:
+    branches:
+      - "**"
+jobs:
+  build:
+    uses: mcabrera/changethis/MyAppBuild.yaml
+    with:
+      artifactName: MyAppAPIs
+      baseVersion: 2.0.5
